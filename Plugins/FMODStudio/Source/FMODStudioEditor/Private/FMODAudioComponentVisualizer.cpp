@@ -37,7 +37,8 @@ void FFMODAudioComponentVisualizer::DrawVisualization(const UActorComponent *Com
                     }
                     else
                     {
-                        EventDesc->getMinMaxDistance(&MinDistance, &MaxDistance);
+                        EventDesc->getMinimumDistance(&MinDistance);
+                        EventDesc->getMaximumDistance(&MaxDistance);
                     }
                     MinDistance = FMODUtils::DistanceToUEScale(MinDistance);
                     MaxDistance = FMODUtils::DistanceToUEScale(MaxDistance);

@@ -7,9 +7,9 @@
 <body>
 <div class="docs-body">
 <div class="manual-toc">
-<p>Unreal Integration 2.02</p>
+<p>UE4 Integration 2.01</p>
 <ul>
-<li><a href="welcome.html">Welcome to FMOD for Unreal</a></li>
+<li><a href="welcome.html">Welcome to FMOD for UE4</a></li>
 <li><a href="user-guide.html">User Guide</a></li>
 <li><a href="settings.html">Settings</a></li>
 <li><a href="plugins.html">Plugins</a></li>
@@ -37,7 +37,7 @@
 <li><a class="apilink" href="blueprint-reference-eventinstance.html#event-instance-set-transform" title="Set 3D attributes on an FMOD Event Instance.">Event Instance Set Transform</a> Set 3D attributes on an FMOD Event Instance.</li>
 <li><a class="apilink" href="blueprint-reference-eventinstance.html#event-instance-set-volume" title="Set volume on an FMOD Event Instance.">Event Instance Set Volume</a> Set volume on an FMOD Event Instance.</li>
 <li><a class="apilink" href="blueprint-reference-eventinstance.html#event-instance-stop" title="Mute/Unmute the bus.">Event Instance Stop</a> Mute/Unmute the bus.</li>
-<li><a class="apilink" href="blueprint-reference-eventinstance.html#event-instance-key-off" title="Allow an FMOD Event Instance to continue past a sustain point.">Event Instance Key Off</a> Allow an FMOD Event Instance to continue past a sustain point.</li>
+<li><a class="apilink" href="blueprint-reference-eventinstance.html#event-instance-trigger-cue" title="Trigger a cue on an FMOD Event Instance.">Event Instance Trigger Cue</a> Trigger a cue on an FMOD Event Instance.</li>
 </ul>
 <h2 api="function" id="event-instance-get-parameter"><a href="#event-instance-get-parameter">Event Instance Get Parameter</a></h2>
 <p>Get a parameter value on an FMOD Event Instance.</p>
@@ -107,22 +107,6 @@
 <dd><a class="apilink" href="api-reference-ufmodblueprintstatics.html#ffmodeventinstance" title="Wrapped FMOD::Studio::EventInstance for use in blueprints.">FFMODEventInstance</a> to use.</dd>
 </dl>
 <p>The instance will be invalidated when the sound stops.</p>
-<h2 api="function" id="event-instance-key-off"><a href="#event-instance-key-off">Event Instance Key Off</a></h2>
-<p>Allow an FMOD Event Instance to continue past a sustain point.</p>
-<p><img alt="Event Instance Key Off" src="images/event-instance-key-off.png" /></p>
-<p>
-<div class="language-selector">
-<div class="language-tab" data-language="language-cpp">C++</div>
-</div>
-</p>
-<div class="highlight language-cpp"><pre><span></span><span class="k">static</span> <span class="kt">void</span> <span class="nf">EventInstanceKeyOff</span><span class="p">(</span><span class="n">FFMODEventInstance</span> <span class="n">EventInstance</span><span class="p">);</span>
-</pre></div>
-
-
-<dl>
-<dt>EventInstance</dt>
-<dd><a class="apilink" href="api-reference-ufmodblueprintstatics.html#ffmodeventinstance" title="Wrapped FMOD::Studio::EventInstance for use in blueprints.">FFMODEventInstance</a> to resume past sustain point.</dd>
-</dl>
 <h2 api="function" id="event-instance-play"><a href="#event-instance-play">Event Instance Play</a></h2>
 <p>Play an FMOD Event Instance.</p>
 <p><img alt="Event Instance Play" src="images/event-instance-play.png" /></p>
@@ -243,7 +227,7 @@
 <dt>EventInstance</dt>
 <dd><a class="apilink" href="api-reference-ufmodblueprintstatics.html#ffmodeventinstance" title="Wrapped FMOD::Studio::EventInstance for use in blueprints.">FFMODEventInstance</a> to use.</dd>
 <dt>Property</dt>
-<dd><a href="https://fmod.com/resources/documentation-api?version=2.2&amp;page=studio-api-eventinstance.html#fmod_studio_event_property">EFMODEventProperty</a> to set.</dd>
+<dd><a href="https://fmod.com/resources/documentation-api?version=2.1&amp;page=studio-api-eventinstance.html#fmod_studio_event_property">EFMODEventProperty</a> to set.</dd>
 <dt>Value</dt>
 <dd>Value of property.</dd>
 </dl>
@@ -306,9 +290,27 @@
 <dd><a class="apilink" href="api-reference-ufmodblueprintstatics.html#ffmodeventinstance" title="Wrapped FMOD::Studio::EventInstance for use in blueprints.">FFMODEventInstance</a> to stop.</dd>
 <dt>Release</dt>
 <dd>Whether to release the Event Instance</dd>
-</dl></div>
+</dl>
+<h2 api="function" id="event-instance-trigger-cue"><a href="#event-instance-trigger-cue">Event Instance Trigger Cue</a></h2>
+<p>Trigger a cue on an FMOD Event Instance.</p>
+<p><img alt="Event Instance Trigger Cue" src="images/event-instance-trigger-cue.png" /><br />
+<div class="language-selector">
+<div class="language-tab" data-language="language-cpp">C++</div>
+</div>
+</p>
+<div class="highlight language-cpp"><pre><span></span><span class="k">static</span> <span class="kt">void</span> <span class="nf">EventInstanceTriggerCue</span><span class="p">(</span>
+  <span class="n">FFMODEventInstance</span> <span class="n">EventInstance</span>
+<span class="p">);</span>
+</pre></div>
 
-<p class="manual-footer">Unreal Integration 2.02.05 (2021-12-21). &copy; 2021 Firelight Technologies Pty Ltd.</p>
+
+<dl>
+<dt>EventInstance</dt>
+<dd><a class="apilink" href="api-reference-ufmodblueprintstatics.html#ffmodeventinstance" title="Wrapped FMOD::Studio::EventInstance for use in blueprints.">FFMODEventInstance</a> to use.</dd>
+</dl>
+<p><strong>See Also:</strong> <a href="https://fmod.com/resources/documentation-api?version=2.1&amp;page=white-papers-transitioning-from-fmodex.html#sustain-points-and-key-off">Sustain Points and Key Off</a></p></div>
+
+<p class="manual-footer">UE4 Integration 2.01.14 (2021-12-21). &copy; 2021 Firelight Technologies Pty Ltd.</p>
 </body>
 </html>
 

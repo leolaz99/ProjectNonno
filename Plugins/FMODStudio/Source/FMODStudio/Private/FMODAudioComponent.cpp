@@ -755,12 +755,12 @@ void UFMODAudioComponent::ReleaseEventInstance()
     }
 }
 
-void UFMODAudioComponent::KeyOff()
+void UFMODAudioComponent::TriggerCue()
 {
-    UE_LOG(LogFMOD, Verbose, TEXT("UFMODAudioComponent %p KeyOff"), this);
+    UE_LOG(LogFMOD, Verbose, TEXT("UFMODAudioComponent %p TriggerCue"), this);
     if (StudioInstance)
     {
-        StudioInstance->keyOff();
+        StudioInstance->triggerCue();
     }
 }
 

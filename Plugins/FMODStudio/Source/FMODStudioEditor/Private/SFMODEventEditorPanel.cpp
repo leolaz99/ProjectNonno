@@ -46,7 +46,8 @@ TSharedRef<SBorder> SFMODEventEditorPanel::ConstructToolbar(FMOD::Studio::EventD
     bool bIsOneshot = false, bIsStream = false, bIs3D = false;
     if (EventDescription != nullptr)
     {
-        EventDescription->getMinMaxDistance(&MinDistance, &MaxDistance);
+        EventDescription->getMinimumDistance(&MinDistance);
+        EventDescription->getMaximumDistance(&MaxDistance);
         EventDescription->getLength(&EventLengthMS);
         EventDescription->isOneshot(&bIsOneshot);
         EventDescription->isStream(&bIsStream);
@@ -148,7 +149,8 @@ TSharedRef<SExpandableArea> SFMODEventEditorPanel::ConstructInfo(FMOD::Studio::E
         float MinDist = 0.0f;
         float MaxDist = 0.0f;
         EventDescription->getLength(&Length);
-        EventDescription->getMinMaxDistance(&MinDist, &MaxDist);
+        EventDescription->getMinimumDistance(&MinDist);
+        EventDescription->getMaximumDistance(&MaxDist);
 
         bool bOneShot = false;
         bool bStream = false;

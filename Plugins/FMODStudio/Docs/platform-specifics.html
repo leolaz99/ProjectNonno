@@ -7,9 +7,9 @@
 <body>
 <div class="docs-body">
 <div class="manual-toc">
-<p>Unreal Integration 2.02</p>
+<p>UE4 Integration 2.01</p>
 <ul>
-<li><a href="welcome.html">Welcome to FMOD for Unreal</a></li>
+<li><a href="welcome.html">Welcome to FMOD for UE4</a></li>
 <li><a href="user-guide.html">User Guide</a></li>
 <li><a href="settings.html">Settings</a></li>
 <li><a href="plugins.html">Plugins</a></li>
@@ -129,7 +129,7 @@ The location of <code>AndroidGame.ini</code> is <code>Config\Android\AndroidGame
 <h2 id="game-core"><a href="#game-core">7.2 Game Core</a></h2>
 <h3 id="xbox-series-xs"><a href="#xbox-series-xs">7.2.1 Xbox Series X|S</a></h3>
 <h4 id="enabling-live-update"><a href="#enabling-live-update">Enabling Live Update</a></h4>
-<p>To enable Live Update the Unreal XSX project settings must be modified to allow FMOD to open the Live Update port from the running game. Access the settings by opening the <strong>Project Settings</strong> editor from the <strong>Edit</strong> menu, then navigate to Xbox Series X|S platform settings. Under the <strong>Development</strong> category, add the following entry to the <strong>Debug Network Ports</strong> setting:<br />
+<p>To enable Live Update the UE4 XSX project settings must be modified to allow FMOD to open the Live Update port from the running game. Access the settings by opening the <strong>Project Settings</strong> editor from the <strong>Edit</strong> menu, then navigate to Xbox Series X|S platform settings. Under the <strong>Development</strong> category, add the following entry to the <strong>Debug Network Ports</strong> setting:<br />
 <img alt="Settings" src="images/gdk-enable-liveupdate.png" /></p>
 <h4 id="packaging_1"><a href="#packaging_1">Packaging</a></h4>
 <p>Banks for the Xbox Series X|S are expected to be located in the <code>Scarlett</code> sub-directory of the Studio built banks output directory. This sub-directory name is hardcoded in the integration so if you want to use a different location you would need to modify the integration source code.</p>
@@ -142,7 +142,7 @@ The location of <code>AndroidGame.ini</code> is <code>Config\Android\AndroidGame
 
 <h3 id="xbox-one"><a href="#xbox-one">7.2.2 Xbox One</a></h3>
 <h4 id="enabling-live-update_1"><a href="#enabling-live-update_1">Enabling Live Update</a></h4>
-<p>To enable Live Update the Unreal Xbox One GDK project settings must be modified to allow FMOD to open the Live Update port from the running game. Access the settings by opening the <strong>Project Settings</strong> editor from the <strong>Edit</strong> menu, then navigate to Xbox One GDK platform settings. Under the <strong>Development</strong> category, add the following entry to the <strong>Debug Network Ports</strong> setting:<br />
+<p>To enable Live Update the UE4 Xbox One GDK project settings must be modified to allow FMOD to open the Live Update port from the running game. Access the settings by opening the <strong>Project Settings</strong> editor from the <strong>Edit</strong> menu, then navigate to Xbox One GDK platform settings. Under the <strong>Development</strong> category, add the following entry to the <strong>Debug Network Ports</strong> setting:<br />
 <img alt="Settings" src="images/gdk-enable-liveupdate.png" /></p>
 <h4 id="packaging_2"><a href="#packaging_2">Packaging</a></h4>
 <p>Banks for the Xbox One are expected to be located in the <code>XboxOne</code> sub-directory of the Studio built banks output directory. This sub-directory name is hardcoded in the integration so if you want to use a different location you would need to modify the integration source code.</p>
@@ -180,7 +180,7 @@ The location of <code>AndroidGame.ini</code> is <code>Config\Android\AndroidGame
 The location of <code>IOSGame.ini</code> is <code>Config\IOS\IOSGame.ini</code></p>
 </div>
 <h3 id="building-for-ios-on-windows"><a href="#building-for-ios-on-windows">7.3.2 Building for iOS on Windows</a></h3>
-<p>Using remote build to build for iOS on Windows using the FMOD Studio plugin requires some additional files to be copied to the remote Mac. To tell Unreal to copy the additional files add a file named <code>RsyncProject.txt</code> to the directory <code>&lt;ue_project_root&gt;/Build/Rsync</code> (you may need to create this directory). The <code>RsyncProject.txt</code> file needs to contain this line:</p>
+<p>Using remote build to build for iOS on Windows using the FMOD Studio plugin requires some additional files to be copied to the remote Mac. To tell UE4 to copy the additional files add a file named <code>RsyncProject.txt</code> to the directory <code>&lt;ue4_project_root&gt;/Build/Rsync</code> (you may need to create this directory). The <code>RsyncProject.txt</code> file needs to contain this line:</p>
 <div class="highlight language-text"><pre><span></span>+ /Plugins/FMODStudio/Binaries/IOS/**
 </pre></div>
 
@@ -201,7 +201,7 @@ The location of <code>IOSGame.ini</code> is <code>Config\IOS\IOSGame.ini</code><
 The location of <code>TVOSGame.ini</code> is <code>Config\TVOS\TVOSGame.ini</code></p>
 </div>
 <h2 id="linux"><a href="#linux">7.5 Linux</a></h2>
-<p>To deploy on linux, you will need to rebuild the engine from source via github. For compiling linux from windows, see this <a href="https://wiki.unrealengine.com/Compiling_For_Linux">page</a> for instructions how to get up and running with Unreal. Then, add in both the fmodstudio linux .zip and windows .zip on top of each other into the engine plugins directory.</p>
+<p>To deploy on linux, you will need to rebuild the engine from source via github. For compiling linux from windows, see this <a href="https://wiki.unrealengine.com/Compiling_For_Linux">page</a> for instructions how to get up and running with UE4. Then, add in both the fmodstudio linux .zip and windows .zip on top of each other into the engine plugins directory.</p>
 <p>The last thing you will need to do is to get the FMOD .so libraries into a directory that the executable can read them. The easiest way is to copy them from</p>
 <div class="highlight language-text"><pre><span></span>&lt;DeployedDir&gt;\Engine\Plugins\FMODStudio\Binaries\Linux\x86_64
 </pre></div>
@@ -215,7 +215,7 @@ The location of <code>TVOSGame.ini</code> is <code>Config\TVOS\TVOSGame.ini</cod
 <p>To see what directories the .so files can be located, look at LinuxToolChain.cs. Currently there are only a set of hard coded directories that are supported.</p>
 <h2 id="macos"><a href="#macos">7.6 macOS</a></h2>
 <p>To make a packaged build runnable on your local machine, execute the following command from the command shell :</p>
-<div class="highlight language-text"><pre><span></span>install_name_tool -add_rpath @executable_path/../Unreal/YourGame/Plugins/FMODStudio/Libs/Mac /Path/To/YourGame.app/Contents/MacOS/YourGame
+<div class="highlight language-text"><pre><span></span>install_name_tool -add_rpath @executable_path/../UE4/YourGame/Plugins/FMODStudio/Libs/Mac /Path/To/YourGame.app/Contents/MacOS/YourGame
 </pre></div>
 
 
@@ -269,7 +269,7 @@ Package.Capabilities.mx:Capability[1].Name=kinectGamechat
 
 
 <h3 id="enabling-live-update_2"><a href="#enabling-live-update_2">7.11.2 Enabling Live Update</a></h3>
-<p>To enable Live Update the Unreal Xbox One project settings must be modified to allow FMOD to open the Live Update port from the running game. Access the settings by opening the <strong>Project Settings</strong> editor from the <strong>Edit</strong> menu, then navigate to Xbox One platform settings. Under the <strong>Network</strong> category, add the following entries to the <strong>Secure Socket Descriptions</strong> and <strong>Secure Socket Associations</strong> settings:<br />
+<p>To enable Live Update the UE4 Xbox One project settings must be modified to allow FMOD to open the Live Update port from the running game. Access the settings by opening the <strong>Project Settings</strong> editor from the <strong>Edit</strong> menu, then navigate to Xbox One platform settings. Under the <strong>Network</strong> category, add the following entries to the <strong>Secure Socket Descriptions</strong> and <strong>Secure Socket Associations</strong> settings:<br />
 <img alt="Settings" src="images/xboxone-enable-liveupdate.png" /></p>
 <h3 id="packaging_10"><a href="#packaging_10">7.11.3 Packaging</a></h3>
 <p>Banks for the Xbox One are expected to be located in the <code>XboxOne</code> sub-directory of the Studio built banks output directory. This sub-directory name is hardcoded in the integration so if you want to use a different location you would need to modify the integration source code.</p>
@@ -349,7 +349,7 @@ if (FMODDLLPath != null)
 
 <h3 id="submission-validator"><a href="#submission-validator">7.11.5 Submission Validator</a></h3>
 <p>The XboxOne validaition tool uses <code>_NT_SYMBOL_PATH</code> environment variable to know where to look for PDBs.<br />
-In 'XboxOnePlatform.Automation.cs' is where Unreal overrides _NT_SYMBOL_PATH:</p>
+In 'XboxOnePlatform.Automation.cs' is where UE4 overrides _NT_SYMBOL_PATH:</p>
 <div class="highlight language-text"><pre><span></span>EnvironmentVariables.Add(&quot;_NT_SYMBOL_PATH&quot;, Params.GetProjectBinariesPathForPlatform(UnrealTargetPlatform.XboxOne).ToString());
 </pre></div>
 
@@ -364,7 +364,7 @@ EnvironmentVariables.Add(&quot;_NT_SYMBOL_PATH&quot;, SymbolPath);
 <p>Then, on your build machine you need to set the value of <code>_NT_SYMBOL_PATH</code> to where the FMOD PDBs will be.<br />
 Eg. "[MyGame]\Plugins\FMODStudio\Binaries\XBoxOne" or "[MyGame]\Platforms\XboxOne\Plugins\FMODStudio\Binaries".</p></div>
 
-<p class="manual-footer">Unreal Integration 2.02.05 (2021-12-21). &copy; 2021 Firelight Technologies Pty Ltd.</p>
+<p class="manual-footer">UE4 Integration 2.01.14 (2021-12-21). &copy; 2021 Firelight Technologies Pty Ltd.</p>
 </body>
 </html>
 

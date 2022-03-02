@@ -530,11 +530,11 @@ void UFMODBlueprintStatics::EventInstanceRelease(FFMODEventInstance EventInstanc
     }
 }
 
-void UFMODBlueprintStatics::EventInstanceKeyOff(FFMODEventInstance EventInstance)
+void UFMODBlueprintStatics::EventInstanceTriggerCue(FFMODEventInstance EventInstance)
 {
     if (EventInstance.Instance)
     {
-        EventInstance.Instance->keyOff();
+        EventInstance.Instance->triggerCue();
     }
 }
 

@@ -7,9 +7,9 @@
 <body>
 <div class="docs-body">
 <div class="manual-toc">
-<p>Unreal Integration 2.02</p>
+<p>UE4 Integration 2.01</p>
 <ul>
-<li><a href="welcome.html">Welcome to FMOD for Unreal</a></li>
+<li><a href="welcome.html">Welcome to FMOD for UE4</a></li>
 <li><a href="user-guide.html">User Guide</a></li>
 <li><a href="settings.html">Settings</a></li>
 <li><a href="plugins.html">Plugins</a></li>
@@ -37,7 +37,7 @@
 <p>If you are experiencing an issue with the integration and none of the topics below help, visit to our <a href="https://qa.fmod.com/c/ue4">Q&amp;A Forum</a>.</p>
 <h2 id="check-the-plugin-is-installed"><a href="#check-the-plugin-is-installed">8.1 Check the plugin is installed</a></h2>
 <p>You should see a shortcut to the manual is available under the help menu, that means the plugin is in the right place and has been enabled.</p>
-<p><img alt="Unreal Help Menu" src="images/docs-menu.png" /></p>
+<p><img alt="UE4 Help Menu" src="images/docs-menu.png" /></p>
 <p>If you see the FMOD Help in the manual, then the plugin installed correctly. If you don't see FMOD help, it isn't installed.</p>
 <h2 id="project-output-format"><a href="#project-output-format">8.2 Project Output Format</a></h2>
 <p>If you have modified the project output format in your FMOD Studio project, you will need to update your Unreal project settings to match. <br />
@@ -53,13 +53,13 @@ However any such changes aren't going to change the underlying Studio project, s
 <h2 id="live-update"><a href="#live-update">8.5 Live Update</a></h2>
 <p>If Live Update is enabled and the FMOD Studio will error when it fails to open the required network port. If this is a problem, then Live Update can be disabled in the Project Settings window.</p>
 <h2 id="additional-logging"><a href="#additional-logging">8.6 Additional Logging</a></h2>
-<p>To help track down problems, verbose logging can be turned on for FMOD For Unreal. Add the following command line to the Unreal editor:</p>
+<p>To help track down problems, verbose logging can be turned on for the FMOD UE4 integration. Add the following command line to the UE4 editor:</p>
 <div class="highlight language-text"><pre><span></span>-LogCmds=&quot;LogFMOD verbose&quot;
 </pre></div>
 
 
 <h2 id="blueprint-only-projects"><a href="#blueprint-only-projects">8.7 Blueprint only projects</a></h2>
-<p>Packaging a blueprint only project containing FMOD for Unreal will result in an error:</p>
+<p>Packaging a blueprint only project containing FMOD for UE4 will result in an error:</p>
 <div class="highlight language-text"><pre><span></span>&quot;Plugin &#39;FMODStudio&#39; failed to load because module &#39;FMODStudio&#39; could not be found.
 </pre></div>
 
@@ -67,7 +67,7 @@ However any such changes aren't going to change the underlying Studio project, s
 <p>The only way to work around this is to add a blank code class to the project and build the resulting solution before packaging again.<br />
 This is mentioned by Epic on their forum: <a href="https://answers.unrealengine.com/questions/72781/unable-to-run-community-plugins-when-packaged.html">Unable to run plugins when packaged</a>.</p></div>
 
-<p class="manual-footer">Unreal Integration 2.02.05 (2021-12-21). &copy; 2021 Firelight Technologies Pty Ltd.</p>
+<p class="manual-footer">UE4 Integration 2.01.14 (2021-12-21). &copy; 2021 Firelight Technologies Pty Ltd.</p>
 </body>
 </html>
 

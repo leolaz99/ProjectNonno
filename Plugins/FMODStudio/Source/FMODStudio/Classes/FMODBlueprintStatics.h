@@ -278,11 +278,11 @@ class FMODSTUDIO_API UFMODBlueprintStatics : public UBlueprintFunctionLibrary
     UFUNCTION(BlueprintCallable, Category = "Audio|FMOD|EventInstance", meta = (UnsafeDuringActorConstruction = "true"))
     static void EventInstanceRelease(FFMODEventInstance EventInstance);
 
-    /** Allow an FMOD Event Instance to continue past a sustain point.
+    /** Trigger a cue on an FMOD Event Instance.
 	 * @param EventInstance - Event instance
 	 */
     UFUNCTION(BlueprintCallable, Category = "Audio|FMOD|EventInstance", meta = (UnsafeDuringActorConstruction = "true"))
-    static void EventInstanceKeyOff(FFMODEventInstance EventInstance);
+    static void EventInstanceTriggerCue(FFMODEventInstance EventInstance);
 
     /** Set 3D attributes on a FMOD Event Instance.
 	 * @param EventInstance - Event instance

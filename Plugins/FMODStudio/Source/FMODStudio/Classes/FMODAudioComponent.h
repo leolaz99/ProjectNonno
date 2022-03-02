@@ -194,9 +194,9 @@ public:
     UFUNCTION(BlueprintCallable, Category = "Audio|FMOD|Components")
     void Release();
 
-    /**  Allow an event to continue past a sustain point. */
+    /** Trigger a cue in an event. */
     UFUNCTION(BlueprintCallable, Category = "Audio|FMOD|Components")
-    void KeyOff();
+    void TriggerCue();
 
     /** Return true if this component is currently playing an event. */
     UFUNCTION(BlueprintCallable, Category = "Audio|FMOD|Components")

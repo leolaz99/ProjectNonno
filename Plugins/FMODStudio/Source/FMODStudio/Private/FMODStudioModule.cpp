@@ -388,7 +388,7 @@ void *FFMODStudioModule::LoadDll(const TCHAR *ShortName)
     void *Handle = nullptr;
     UE_LOG(LogFMOD, Log, TEXT("FFMODStudioModule::LoadDll: Loading %s"), *LibPath);
     // Unfortunately Unreal's platform loading code hasn't been implemented on all platforms so we wrap it
-#ifdef FMOD_PLATFORM_LOAD_DLL
+#ifdef FMOD_PLATFORM_HEADER
     Handle = FMODPlatformLoadDll(*LibPath);
 #else
     Handle = FPlatformProcess::GetDllHandle(*LibPath);
@@ -789,10 +789,9 @@ bool FFMODStudioModule::Tick(float DeltaTime)
     if (ClockSinks[EFMODSystemContext::Runtime].IsValid())
     {
         FMOD_STUDIO_CPU_USAGE Usage = {};
-        FMOD_CPU_USAGE UsageCore = {};
-        StudioSystem[EFMODSystemContext::Runtime]->getCPUUsage(&Usage, &UsageCore);
-        SET_FLOAT_STAT(STAT_FMOD_CPUMixer, UsageCore.dsp);
-        SET_FLOAT_STAT(STAT_FMOD_CPUStudio, Usage.update);
+        StudioSystem[EFMODSystemContext::Runtime]->getCPUUsage(&Usage);
+        SET_FLOAT_STAT(STAT_FMOD_CPUMixer, Usage.dspusage);
+        SET_FLOAT_STAT(STAT_FMOD_CPUStudio, Usage.studiousage);
 
         int currentAlloc, maxAlloc;
         FMOD::Memory_GetStats(&currentAlloc, &maxAlloc, false);
